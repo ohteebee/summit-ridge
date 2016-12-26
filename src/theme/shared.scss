@@ -1,0 +1,25 @@
+body {
+    section {
+        h2,
+        h3 {
+            @extend .m-t-2;
+        }
+
+        article {
+            @extend .container;
+            @extend .p-y-3;
+        }
+
+        li,
+        ul {
+            padding-left   : 0 !important;
+            list-style-type: none;
+        }
+    }
+    .jumbotron {
+        height: 100vh !important;
+    }
+    a, .link {
+        @extend .text-info;
+    }
+}

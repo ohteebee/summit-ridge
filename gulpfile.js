@@ -8,8 +8,10 @@ var concat = require('gulp-concat');
 var del = require('del');
 var runSequence = require('run-sequence');
 var paths = {
-    sassRoot: 'src/theme/index.sass',
-    sass: 'src/**/*.sass',
+    sassRoot: 'src/theme/index.scss',
+    sass: ['src/**/*.scss',
+        'src/**/*.sass'
+    ],
     destination: 'src',
     production: 'public',
     clean: ['public', 'build'],

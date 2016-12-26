@@ -4065,7 +4065,7 @@ a.bg-danger:focus, a.bg-danger:hover {
 .d-inline-block {
   display: inline-block !important; }
 
-.d-inline {
+.d-inline, #landing ul li {
   display: inline !important; }
 
 .flex-xs-first {
@@ -4362,14 +4362,15 @@ a.bg-danger:focus, a.bg-danger:hover {
   margin-right: 1rem !important;
   margin-left: 1rem !important; }
 
-.m-y-1, #landing ul li a {
+.m-y-1 {
   margin-top: 1rem !important;
   margin-bottom: 1rem !important; }
 
 .m-a-2 {
   margin: 1.5rem 1.5rem !important; }
 
-.m-t-2, body section h2, body section h3 {
+.m-t-2, #landing ul, body section h2,
+body section h3 {
   margin-top: 1.5rem !important; }
 
 .m-r-2 {
@@ -4404,7 +4405,7 @@ a.bg-danger:focus, a.bg-danger:hover {
 .m-l-3 {
   margin-left: 3rem !important; }
 
-.m-x-3 {
+.m-x-3, #landing ul li {
   margin-right: 3rem !important;
   margin-left: 3rem !important; }
 
@@ -4454,7 +4455,7 @@ a.bg-danger:focus, a.bg-danger:hover {
   padding-right: 1rem !important;
   padding-left: 1rem !important; }
 
-.p-y-1 {
+.p-y-1, .fab {
   padding-top: 1rem !important;
   padding-bottom: 1rem !important; }
 
@@ -4473,7 +4474,7 @@ a.bg-danger:focus, a.bg-danger:hover {
 .p-l-2 {
   padding-left: 1.5rem !important; }
 
-.p-x-2 {
+.p-x-2, .fab {
   padding-right: 1.5rem !important;
   padding-left: 1.5rem !important; }
 
@@ -4587,10 +4588,10 @@ a.bg-danger:focus, a.bg-danger:hover {
 a.text-muted:focus, a.text-muted:hover {
   color: #687077; }
 
-.text-primary, #landing ul li a {
+.text-primary, #location ul li span {
   color: #2f60a6 !important; }
 
-a.text-primary:focus, #landing ul li a:focus, a.text-primary:hover, #landing ul li a:hover {
+a.text-primary:focus, a.text-primary:hover {
   color: #24497e; }
 
 .text-success {
@@ -4599,10 +4600,10 @@ a.text-primary:focus, #landing ul li a:focus, a.text-primary:hover, #landing ul 
 a.text-success:focus, a.text-success:hover {
   color: #6fa66b; }
 
-.text-info {
+.text-info, body a, body .link {
   color: #f5d96e !important; }
 
-a.text-info:focus, a.text-info:hover {
+a.text-info:focus, body a:focus, a.text-info:hover, body a:hover {
   color: #f2cc3e; }
 
 .text-warning {
@@ -4687,34 +4688,48 @@ a.text-danger:focus, a.text-danger:hover {
   .hidden-print {
     display: none !important; } }
 
-.center, #location section {
+.center, #landing, #location section {
   text-align: center;
   display: block;
   margin: 0 auto; }
 
+.fab {
+  z-index: 9999;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(55, 58, 60, 0.5); }
+  .fab ul {
+    margin: 0; }
+
 #landing {
+  z-index: 999999 !important;
+  background-repeat: no-repeat;
+  position: relative;
+  background-size: cover;
+  box-shadow: inset 0 0 0 1000px rgba(74, 43, 27, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 400px;
+  color: #eceeef;
   background-image: url("images/murphy-mtns.jpg") !important;
-  height: 600px;
+  height: 100vh;
   background-size: cover;
   position: relative; }
-  #landing h1, #landing h2, #landing h3 {
-    color: #eceeef; }
-  #landing header {
-    position: absolute;
-    bottom: 20px; }
+  #landing h1 {
+    font-size: 3em; }
   #landing ul {
     width: auto;
-    position: fixed;
-    left: 0;
-    top: 10%;
-    border: 1px solid #2f60a6;
-    background: rgba(222, 232, 246, 0.5);
-    list-style-type: none;
-    padding: 0 1em; }
+    list-style-type: none; }
+    @media screen and (max-width: 860px) {
+      #landing ul li {
+        margin-left: 10px !important;
+        margin-right: 10px !important; } }
 
 section#contact.parallax {
   background: url("images/blueprint.jpg");
-  box-shadow: inset 0 0 0 1000px rgba(236, 238, 239, 0.8);
+  box-shadow: inset 0 0 0 1000px rgba(236, 238, 239, 0.9);
   /* Set a specific height */
   height: 100%;
   /* Create the parallax scrolling effect */
@@ -4723,8 +4738,14 @@ section#contact.parallax {
   background-repeat: no-repeat;
   background-size: cover; }
 
-section#contact h1, section#contact h2, section#contact h3, section#contact h4, section#contact h5, section#contact label, section#contact p, section#contact input, section#contact legend, section#contact input[placeholder] {
-  color: #222; }
+section#contact input, section#contact select, section#contact textarea {
+  border-color: #2f60a6; }
+
+section#contact .form-group * {
+  border-radius: 0px !important; }
+
+section#contact h1, section#contact h2, section#contact h3, section#contact h4, section#contact h5, section#contact label, section#contact p, section#contact input, section#contact legend, section#contact input[placeholder], section#contact select {
+  color: #2f60a6 !important; }
 
 #location img {
   width: 100%;
@@ -4755,6 +4776,10 @@ section#about .parallax {
   background-repeat: no-repeat;
   background-size: cover; }
 
-body section li, body section ul {
+body section li,
+body section ul {
   padding-left: 0 !important;
   list-style-type: none; }
+
+body .jumbotron {
+  height: 100vh !important; }
