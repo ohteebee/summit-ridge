@@ -4768,13 +4768,17 @@ section#contact h1, section#contact h2, section#contact h3, section#contact h4, 
   #location section#creek {
     background-image: url("images/creek.jpg"); }
 
-section#about .parallax {
-  background-image: url("images/courthouse.jpeg");
-  height: 300px;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover; }
+section#about {
+  min-height: 100vh; }
+  section#about article {
+    height: 40vh; }
+  section#about .parallax {
+    background-image: url("images/courthouse.jpeg");
+    height: 60vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; }
 
 body section li,
 body section ul {
